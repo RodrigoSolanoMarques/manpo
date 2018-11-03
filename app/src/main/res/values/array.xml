@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="intervalo_curto_minutos">
+        <item>3 minutos</item>
+        <item>5 minutos</item>
+        <item>8 minutos</item>
+    </string-array>
+
+    <string-array name="intervalo_curto_valor">
+        <item>3</item>
+        <item>5</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="intervalo_longo_minutos">
+        <item>20 minutos</item>
+        <item>25 minutos</item>
+        <item>30 minutos</item>
+    </string-array>
+
+    <string-array name="intervalo_longo_valor">
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+    </string-array>
+
+</resources>

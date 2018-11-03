@@ -3,4 +3,65 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- A -->
+    <!-- B -->
+    <!-- C -->
+    <string name="concentracao">Concentração</string>
+    <string name="configuracao">Configuração</string>
+    <string name="configuracoes">Configurações</string>
+    <!-- D -->
+    <!-- E -->
+    <string name="editar">Editar</string>
+    <!-- F -->
+    <!-- G -->
+    <!-- H -->
+    <string name="hoje">Hoje</string>
+    <!-- I -->
+    <string name="inicio">Início</string>
+    <string name="info_define_tempo_intervalo_curto">Define o tempo do intervalo curto</string>
+    <string name="info_define_tempo_intervalo_longo">Define o tempo do intervalo longo</string>
+    <string name="info_nao_notificar_concentracao">Não notificar concentração</string>
+    <string name="info_nao_notificar_intervalo_curto">Não notificar intervalo curto</string>
+    <string name="info_nao_notificar_intervalo_longo">Não notificar intervalo longo</string>
+    <string name="info_notificar_concentracao">Notificar concentração</string>
+    <string name="info_notificar_intervalo_curto">Notificar intervalo curto</string>
+    <string name="info_notificar_intervalo_longo">Notificar intervalo longo</string>
+    <string name="info_tempo_concentracao_25_minutos">O tempo de concentração é de 25 minutos</string>
+    <string name="intervalo">Intervalo</string>
+    <string name="intervalo_curto">Intervalo curto</string>
+    <string name="intervalo_longo">Intervalo longo</string>
+    <string name="intervalos">Intervalos</string>
+
+    <!-- J -->
+    <!-- K -->
+    <!-- L -->
+    <!-- M -->
+    <string name="mes">Mês</string>
+    <!-- N -->
+    <string name="notificacao">Notificação</string>
+    <string name="notificacoes">Notificações</string>
+    <string name="novo">Novo</string>
+
+    <!-- O -->
+    <string name="ordenar">Ordenar</string>
+    <string name="ordenação">Ordenação</string>
+    <!-- P -->
+    <string name="pomodoro">Pomodoro</string>
+    <string name="pomodoros">Pomodoros</string>
+    <string name="pomodoro_s">Pomodoro(s)</string>
+
+    <!-- Q -->
+    <!-- R -->
+    <!-- S -->
+    <string name="salvar">Salvar</string>
+    <string name="semana">Semana</string>
+    <!-- T -->
+    <string name="tarefas">Tarefas</string>
+
+    <!-- U -->
+    <!-- V -->
+    <!-- X -->
+    <!-- Z -->
+
 </resources>
