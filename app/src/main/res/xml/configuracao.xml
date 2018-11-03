@@ -7,7 +7,7 @@
             android:entries="@array/intervalo_curto_minutos"
             android:entryValues="@array/intervalo_curto_valor"
             android:icon="@drawable/ic_access_time_black"
-            android:key="intervalo-curto"
+            android:key="intervalo_curto"
             android:summary="@string/info_define_tempo_intervalo_curto"
             android:title="@string/intervalo_curto" />
 
@@ -16,7 +16,7 @@
             android:entries="@array/intervalo_longo_minutos"
             android:entryValues="@array/intervalo_longo_valor"
             android:icon="@drawable/ic_access_time_black"
-            android:key="intervalo-longo"
+            android:key="intervalo_longo"
             android:summary="@string/info_define_tempo_intervalo_longo"
             android:title="@string/intervalo_longo" />
 
@@ -26,7 +26,7 @@
             android:icon="@drawable/ic_access_time_black"
             android:inputType="number"
             android:enabled="false"
-            android:key="intervalo-longo"
+            android:key="intervalo_longo"
             android:summary="@string/info_tempo_concentracao_25_minutos"
             android:title="@string/concentracao" />
     </PreferenceCategory>
@@ -35,7 +35,7 @@
         <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_notifications_black"
-            android:key="notificacao-intervalo-curto"
+            android:key="notificacao_intervalo_curto"
             android:summaryOff="@string/info_nao_notificar_intervalo_curto"
             android:summaryOn="@string/info_notificar_intervalo_curto"
             android:title="@string/intervalo_curto" />
@@ -43,7 +43,7 @@
         <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_notifications_black"
-            android:key="notificacao-intervalo-longo"
+            android:key="notificacao_intervalo_longo"
             android:summaryOff="@string/info_nao_notificar_intervalo_longo"
             android:summaryOn="@string/info_notificar_intervalo_longo"
             android:title="@string/intervalo_longo" />
@@ -51,7 +51,7 @@
         <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_notifications_black"
-            android:key="notificacao-concentração"
+            android:key="notificacao_concentração"
             android:summaryOff="@string/info_nao_notificar_concentracao"
             android:summaryOn="@string/info_notificar_concentracao"
             android:title="@string/concentracao" />
