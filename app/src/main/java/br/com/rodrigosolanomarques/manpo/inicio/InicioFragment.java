@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import br.com.rodrigosolanomarques.manpo.R;
 
@@ -34,6 +35,8 @@ public class InicioFragment extends Fragment implements InicioContract.View {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        configurarToolbar();
+
         View layout = inflater.inflate(R.layout.fragment_inicio, container, false);
 
         tvPomodoroHoje = layout.findViewById(R.id.tvPomodoroHoje);
@@ -41,6 +44,11 @@ public class InicioFragment extends Fragment implements InicioContract.View {
         tvPomodoroMes = layout.findViewById(R.id.tvPomodoroMes);
 
         return layout;
+    }
+
+    private void configurarToolbar() {
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.inicio);
     }
 
     @Override
