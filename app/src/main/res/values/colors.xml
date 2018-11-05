@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#D50000</color>
     <color name="colorAccent">#E84C5A</color>
     <!--<color name="colorAccent">#ffffff</color>-->
+
+
+    <color name="alta">@color/colorAccent</color>
+    <color name="baixa">#4c5ee8</color>
+    <color name="media">#e8ce4c</color>
 </resources>
