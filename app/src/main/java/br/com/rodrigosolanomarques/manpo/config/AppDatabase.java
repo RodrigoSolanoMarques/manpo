@@ -6,8 +6,9 @@ import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
-import br.com.rodrigosolanomarques.manpo.converters.Converters;
-import br.com.rodrigosolanomarques.manpo.model.Tarefa;
+import br.com.rodrigosolanomarques.manpo.data.local.TarefaDao;
+import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
+import br.com.rodrigosolanomarques.manpo.data.model.converters.Converters;
 
 @Database(entities = {
         Tarefa.class
@@ -20,9 +21,11 @@ public abstract class AppDatabase extends RoomDatabase {
     public AppDatabase getInstance(Context context) {
         if (appDatabase == null) {
             appDatabase = Room.databaseBuilder(context,
-                    AppDatabase.class, "database-name").build();
+                    AppDatabase.class, "rsm-manpo").build();
             return appDatabase;
         }
         return appDatabase;
     }
+
+    public abstract TarefaDao tarefaDao();
 }

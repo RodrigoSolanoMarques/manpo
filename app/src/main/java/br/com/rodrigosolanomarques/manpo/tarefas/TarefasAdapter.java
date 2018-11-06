@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import br.com.rodrigosolanomarques.manpo.R;
-import br.com.rodrigosolanomarques.manpo.model.Tarefa;
+import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
 
 public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHolder> {
 

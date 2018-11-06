@@ -16,7 +16,7 @@ import java.util.Date;
 
 import br.com.rodrigosolanomarques.manpo.R;
 import br.com.rodrigosolanomarques.manpo.enumeration.Prioridade;
-import br.com.rodrigosolanomarques.manpo.model.Tarefa;
+import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
 
 public class TarefasFragment extends Fragment implements TarefasContract.View {
 

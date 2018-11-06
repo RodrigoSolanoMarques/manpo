@@ -1,8 +1,10 @@
-package br.com.rodrigosolanomarques.manpo.model;
+package br.com.rodrigosolanomarques.manpo.data.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.Nullable;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -15,18 +17,22 @@ public class Tarefa implements Serializable {
     @PrimaryKey
     private long id;
 
+    @Nullable
     @ColumnInfo
     private String descricao;
 
+    @Nullable
     @ColumnInfo
     private Integer tempo;
 
+    @Nullable
     @ColumnInfo(name = "data_criacao")
     private Date dataCriacao;
 
     @ColumnInfo(name = "data_finalizacao")
     private Date dataFinalizacao;
 
+    @Nullable
     @ColumnInfo
     private Prioridade prioridade;
 
@@ -44,27 +50,30 @@ public class Tarefa implements Serializable {
         this.id = id;
     }
 
+    @Nullable
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(@Nullable String descricao) {
         this.descricao = descricao;
     }
 
+    @Nullable
     public Integer getTempo() {
         return tempo;
     }
 
-    public void setTempo(Integer tempo) {
+    public void setTempo(@Nullable Integer tempo) {
         this.tempo = tempo;
     }
 
+    @Nullable
     public Date getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Date dataCriacao) {
+    public void setDataCriacao(@Nullable Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
@@ -76,11 +85,12 @@ public class Tarefa implements Serializable {
         this.dataFinalizacao = dataFinalizacao;
     }
 
+    @Nullable
     public Prioridade getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(Prioridade prioridade) {
+    public void setPrioridade(@Nullable Prioridade prioridade) {
         this.prioridade = prioridade;
     }
 

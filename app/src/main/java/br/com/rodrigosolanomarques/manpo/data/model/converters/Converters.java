@@ -1,4 +1,4 @@
-package br.com.rodrigosolanomarques.manpo.converters;
+package br.com.rodrigosolanomarques.manpo.data.model.converters;
 
 import android.arch.persistence.room.TypeConverter;
 
