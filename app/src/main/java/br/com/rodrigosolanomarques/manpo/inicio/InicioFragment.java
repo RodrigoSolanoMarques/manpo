@@ -23,8 +23,7 @@ public class InicioFragment extends Fragment implements InicioContract.View {
     }
 
     public static InicioFragment newInstance() {
-        InicioFragment fragment = new InicioFragment();
-        return fragment;
+        return new InicioFragment();
     }
 
     @Override

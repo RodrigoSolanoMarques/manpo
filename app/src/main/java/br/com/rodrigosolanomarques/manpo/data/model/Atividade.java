@@ -6,6 +6,8 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.Nullable;
 
+import java.io.Serializable;
+
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity
@@ -14,7 +16,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
         parentColumns = "id",
         childColumns = "tarefaId",
         onDelete = CASCADE)
-public class Atividade {
+public class Atividade implements Serializable {
 
     @PrimaryKey
     private Long id;

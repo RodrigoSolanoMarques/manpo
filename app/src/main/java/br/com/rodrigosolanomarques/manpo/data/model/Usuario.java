@@ -6,8 +6,10 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.Nullable;
 
+import java.io.Serializable;
+
 @Entity
-public class Usuario {
+public class Usuario implements Serializable {
 
     @PrimaryKey
     private long id;

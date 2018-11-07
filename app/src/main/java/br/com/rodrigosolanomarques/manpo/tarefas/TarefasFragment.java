@@ -1,7 +1,9 @@
 package br.com.rodrigosolanomarques.manpo.tarefas;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,10 +17,13 @@ import java.util.Arrays;
 import java.util.Date;
 
 import br.com.rodrigosolanomarques.manpo.R;
-import br.com.rodrigosolanomarques.manpo.enumeration.Prioridade;
 import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
+import br.com.rodrigosolanomarques.manpo.enumeration.Prioridade;
+import br.com.rodrigosolanomarques.manpo.tarefas.cadastro.CadastrarTarefaActivity;
 
-public class TarefasFragment extends Fragment implements TarefasContract.View {
+public class TarefasFragment
+        extends Fragment
+        implements TarefasContract.View, TarefasAdapter.OnItemClickListener, View.OnClickListener {
 
     private TarefasContract.Presenter presenter;
 
@@ -27,8 +32,7 @@ public class TarefasFragment extends Fragment implements TarefasContract.View {
     }
 
     public static TarefasFragment newInstance() {
-        TarefasFragment fragment = new TarefasFragment();
-        return fragment;
+        return new TarefasFragment();
     }
 
     @Override
@@ -45,6 +49,8 @@ public class TarefasFragment extends Fragment implements TarefasContract.View {
         View layout = inflater.inflate(R.layout.fragment_tarefas, container, false);
 
         RecyclerView recyclerView = layout.findViewById(R.id.rvListaTarefas);
+        FloatingActionButton fabAdicionarTarefa = layout.findViewById(R.id.fabAdicionarTarefa);
+
         Tarefa tarefa1 = new Tarefa();
         tarefa1.setDescricao("Fazer o artigo da Pós");
         tarefa1.setPrioridade(Prioridade.BAIXA);
@@ -83,11 +89,12 @@ public class TarefasFragment extends Fragment implements TarefasContract.View {
                 tarefa1, tarefa2, tarefa3, tarefa4,
                 tarefa1, tarefa2, tarefa3, tarefa4,
                 tarefa1, tarefa2, tarefa3, tarefa4
-        ));
+        ), this);
         recyclerView.setAdapter(adapter);
 
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
 
+        fabAdicionarTarefa.setOnClickListener(this);
         return layout;
     }
 
@@ -99,5 +106,14 @@ public class TarefasFragment extends Fragment implements TarefasContract.View {
     @Override
     public void setPresenter(TarefasContract.Presenter presenter) {
         this.presenter = presenter;
+    }
+
+    @Override
+    public void onItemClick(Tarefa tarefa) {
+    }
+
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(getContext(), CadastrarTarefaActivity.class));
     }
 }

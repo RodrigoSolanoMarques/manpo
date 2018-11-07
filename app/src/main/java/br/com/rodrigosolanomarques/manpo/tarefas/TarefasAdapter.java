@@ -2,6 +2,7 @@ package br.com.rodrigosolanomarques.manpo.tarefas;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +20,16 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
 
     private final List<Tarefa> tarefas;
     private Context context;
+    private OnItemClickListener listener;
 
-    public TarefasAdapter(Context context, List tarefas) {
+    public interface OnItemClickListener {
+        void onItemClick(Tarefa tarefa);
+    }
+
+    public TarefasAdapter(Context context, List tarefas, OnItemClickListener listener) {
         this.tarefas = tarefas;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -73,12 +80,13 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         return tarefas.size();
     }
 
-    class TarefaHolder extends RecyclerView.ViewHolder {
+    class TarefaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView ivPrioridade;
         private ImageView ivFinalizado;
         private TextView tvTitulo;
         private TextView tvTempo;
         private TextView tvDataCriacao;
+        private CardView cardView;
 
 
         public TarefaHolder(@NonNull View itemView) {
@@ -88,6 +96,13 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
             tvTitulo = itemView.findViewById(R.id.tvTitulo);
             tvTempo = itemView.findViewById(R.id.tvTempo);
             tvDataCriacao = itemView.findViewById(R.id.tvDataCriacao);
+            cardView = itemView.findViewById(R.id.cardView);
+            cardView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            listener.onItemClick(tarefas.get(getAdapterPosition()));
         }
     }
 }
