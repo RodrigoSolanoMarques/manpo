@@ -12,6 +12,9 @@ import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
 @Dao
 public interface TarefaDao {
 
+    @Insert
+    Long insert(Tarefa tarefa);
+
     @Query("SELECT * FROM tarefa")
     List<Tarefa> getAll();
 

@@ -14,7 +14,7 @@ import br.com.rodrigosolanomarques.manpo.enumeration.Prioridade;
 @Entity
 public class Tarefa implements Serializable {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
     @Nullable

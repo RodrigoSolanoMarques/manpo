@@ -19,7 +19,12 @@ public class Converters {
     }
 
     @TypeConverter
-    public static String enumParaString(Prioridade prioridade) {
+    public static String prioridadeParaString(Prioridade prioridade) {
         return prioridade == null ? null : prioridade.getValor();
+    }
+
+    @TypeConverter
+    public static Prioridade stringParaPrioridade(String prioridade) {
+        return prioridade == null || prioridade.isEmpty() ? null : Prioridade.valueOf(prioridade);
     }
 }

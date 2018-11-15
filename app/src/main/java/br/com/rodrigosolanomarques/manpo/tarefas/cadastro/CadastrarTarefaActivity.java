@@ -6,15 +6,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.inject.Inject;
+
 import br.com.rodrigosolanomarques.manpo.R;
+import br.com.rodrigosolanomarques.manpo.data.local.TarefaDao;
 
 public class CadastrarTarefaActivity
         extends AppCompatActivity
         implements CadastrarTarefaContract.View {
 
-    public static final String TAREFA = "tarefa";
+//    @Inject
+//     TarefaDao tarefaDao;
 
     private CadastrarTarefaContract.Presenter presenter;
+    private Integer idTarefa;
+
+    public static final String TAREFA = "tarefa";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,9 @@ public class CadastrarTarefaActivity
         setContentView(R.layout.activity_cadastrar_tarefa);
         configurarToolbar();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        recuperarExtras();
+
+        presenter = new CadastrarTarefaPresenter(this, null);
     }
 
     @Override
@@ -49,10 +60,29 @@ public class CadastrarTarefaActivity
         this.presenter = presenter;
     }
 
+    // ===============================================================
+    // ========================== LifeCycle ==========================
+    // ===============================================================
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.start(idTarefa);
+    }
 
     private void configurarToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.tarefa);
         setSupportActionBar(toolbar);
+    }
+
+    private void recuperarExtras() {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null && !extras.isEmpty()) {
+
+            if (extras.containsKey(TAREFA)) {
+                idTarefa = extras.getInt(TAREFA);
+            }
+        }
     }
 }

@@ -11,6 +11,9 @@ public interface CadastrarTarefaContract {
 
     interface Presenter extends BasePresenter {
 
+        void start(Integer idTarefa);
+
+        void buscarTarefa(int idTarefa);
     }
 
 }
