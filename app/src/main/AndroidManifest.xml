@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tarefas.cadastro.CadastrarTarefaActivity"></activity>
+        <activity
+            android:name=".tarefas.cadastro.CadastrarTarefaActivity"
+            />
     </application>
 
 </manifest>

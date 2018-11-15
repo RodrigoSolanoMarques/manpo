@@ -24,4 +24,16 @@
         <item>30</item>
     </string-array>
 
+    <string-array name="prioridades">
+        <item>Alta</item>
+        <item>Baixa</item>
+        <item>Média</item>
+    </string-array>
+
+    <string-array name="prioridades_valor">
+        <item>Alta</item>
+        <item>Baixa</item>
+        <item>Media</item>
+    </string-array>
+
 </resources>

@@ -1,7 +1,7 @@
 package br.com.rodrigosolanomarques.manpo.enumeration;
 
 public enum Prioridade {
-    ALTA("Alta"), BAIXA("Baixa"), MEDIA("Média");
+    ALTA("Alta"), BAIXA("Baixa"), MEDIA("Media");
 
     private String valor;
 
