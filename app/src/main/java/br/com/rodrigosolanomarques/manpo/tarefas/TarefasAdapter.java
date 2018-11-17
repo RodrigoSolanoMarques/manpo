@@ -49,7 +49,7 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         tarefaHolder.tvTitulo.setText(tarefa.getDescricao());
-        tarefaHolder.tvTempo.setText(String.valueOf(tarefa.getTempo()));
+        tarefaHolder.tvTempo.setText(String.valueOf(tarefa.getTempoPrevisto()));
         tarefaHolder.tvDataCriacao.setText(sdf.format(tarefa.getDataCriacao()));
 
         switch (tarefa.getPrioridade()) {

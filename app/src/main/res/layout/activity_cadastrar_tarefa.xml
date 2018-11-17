@@ -58,7 +58,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/tilTempo"
+                android:id="@+id/tilTempoPrevisto"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -78,7 +78,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/tempo"
+                    android:hint="@string/previsao_tempo"
                     android:inputType="number"
                     android:lines="1"
                     android:maxLength="3"
@@ -96,7 +96,7 @@
                 android:entries="@array/prioridades"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ivPrioridade"
-                app:layout_constraintTop_toBottomOf="@+id/tilTempo" />
+                app:layout_constraintTop_toBottomOf="@+id/tilTempoPrevisto" />
 
             <ImageView
                 android:id="@+id/ivPrioridade"

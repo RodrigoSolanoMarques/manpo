@@ -12,7 +12,6 @@ public class CadastrarTarefaPresenter implements CadastrarTarefaContract.Present
     public CadastrarTarefaPresenter(CadastrarTarefaContract.View view, TarefaDao tarefaDao) {
         this.view = view;
         this.view.setPresenter(this);
-
         this.tarefaDao = tarefaDao;
     }
 

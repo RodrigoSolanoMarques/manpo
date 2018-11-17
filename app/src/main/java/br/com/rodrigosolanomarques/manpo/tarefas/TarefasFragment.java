@@ -55,7 +55,7 @@ public class TarefasFragment
         tarefa1.setDescricao("Fazer o artigo da Pós");
         tarefa1.setPrioridade(Prioridade.BAIXA);
         tarefa1.setDataCriacao(new Date());
-        tarefa1.setTempo(20);
+        tarefa1.setTempoPrevisto(20);
         tarefa1.setFinalizada(true);
 
 
@@ -63,7 +63,7 @@ public class TarefasFragment
         tarefa4.setDescricao("Fazer a PS que vai alterar o metodo de venda embarcada");
         tarefa4.setPrioridade(Prioridade.ALTA);
         tarefa4.setDataCriacao(new Date());
-        tarefa4.setTempo(100);
+        tarefa4.setTempoPrevisto(100);
         tarefa4.setFinalizada(false);
 
 
@@ -71,7 +71,7 @@ public class TarefasFragment
         tarefa2.setDescricao("Criar CRUD para o projeto da Pós");
         tarefa2.setPrioridade(Prioridade.MEDIA);
         tarefa2.setDataCriacao(new Date());
-        tarefa2.setTempo(10);
+        tarefa2.setTempoPrevisto(10);
         tarefa2.setFinalizada(true);
 
 
@@ -79,7 +79,7 @@ public class TarefasFragment
         tarefa3.setDescricao("Fazer o artigo da Pós");
         tarefa3.setPrioridade(Prioridade.ALTA);
         tarefa3.setDataCriacao(new Date());
-        tarefa3.setTempo(50);
+        tarefa3.setTempoPrevisto(50);
         tarefa3.setFinalizada(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

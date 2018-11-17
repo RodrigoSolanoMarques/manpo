@@ -34,7 +34,7 @@
     <!-- I -->
     <string name="inicio">Início</string>
     <string name="info_ajuda_descricao_tarefa">Escreva algo simples e fácil de lembrar</string>
-    <string name="info_ajuda_tempo_tarefa">Esse é o tempo em pomodoros que a tarefa vai durar.</string>
+    <string name="info_ajuda_tempo_tarefa">Esse é a previsão de tempo em pomodoros que a tarefa vai durar.</string>
     <string name="info_define_tempo_intervalo_curto">Define o tempo do intervalo curto</string>
     <string name="info_define_tempo_intervalo_longo">Define o tempo do intervalo longo</string>
     <string name="info_nao_notificar_concentracao">Não notificar concentração</string>
@@ -66,6 +66,7 @@
     <string name="pomodoro">Pomodoro</string>
     <string name="pomodoros">Pomodoros</string>
     <string name="pomodoro_s">Pomodoro(s)</string>
+    <string name="previsao_tempo">Previsão de Tempo</string>
 
     <!-- Q -->
     <!-- R -->

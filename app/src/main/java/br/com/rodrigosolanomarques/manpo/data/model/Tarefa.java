@@ -23,7 +23,10 @@ public class Tarefa implements Serializable {
 
     @Nullable
     @ColumnInfo
-    private Integer tempo;
+    private Integer tempoPrevisto;
+
+    @ColumnInfo
+    private Integer tempoExcutado;
 
     @Nullable
     @ColumnInfo(name = "data_criacao")
@@ -60,12 +63,20 @@ public class Tarefa implements Serializable {
     }
 
     @Nullable
-    public Integer getTempo() {
-        return tempo;
+    public Integer getTempoPrevisto() {
+        return tempoPrevisto;
     }
 
-    public void setTempo(@Nullable Integer tempo) {
-        this.tempo = tempo;
+    public void setTempoPrevisto(@Nullable Integer tempoPrevisto) {
+        this.tempoPrevisto = tempoPrevisto;
+    }
+
+    public Integer getTempoExcutado() {
+        return tempoExcutado;
+    }
+
+    public void setTempoExcutado(Integer tempoExcutado) {
+        this.tempoExcutado = tempoExcutado;
     }
 
     @Nullable

@@ -16,15 +16,18 @@ import br.com.rodrigosolanomarques.manpo.data.model.converters.Converters;
 @TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
-    private AppDatabase appDatabase;
+    private static AppDatabase appDatabase;
 
-    public AppDatabase getInstance(Context context) {
+    public static synchronized AppDatabase getInstance(Context context) {
         if (appDatabase == null) {
-            appDatabase = Room.databaseBuilder(context,
-                    AppDatabase.class, "rsm-manpo").build();
-            return appDatabase;
+            appDatabase = create(context);
         }
         return appDatabase;
+    }
+
+    private static AppDatabase create(Context context) {
+        return Room.databaseBuilder(context,
+                AppDatabase.class, "rsm-manpo").build();
     }
 
     public abstract TarefaDao tarefaDao();

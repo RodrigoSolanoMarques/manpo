@@ -6,17 +6,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import javax.inject.Inject;
-
 import br.com.rodrigosolanomarques.manpo.R;
-import br.com.rodrigosolanomarques.manpo.data.local.TarefaDao;
+import br.com.rodrigosolanomarques.manpo.config.AppDatabase;
 
 public class CadastrarTarefaActivity
         extends AppCompatActivity
         implements CadastrarTarefaContract.View {
 
-//    @Inject
-//     TarefaDao tarefaDao;
 
     private CadastrarTarefaContract.Presenter presenter;
     private Integer idTarefa;
@@ -32,7 +28,7 @@ public class CadastrarTarefaActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         recuperarExtras();
 
-        presenter = new CadastrarTarefaPresenter(this, null);
+        presenter = new CadastrarTarefaPresenter(this, AppDatabase.getInstance(this).tarefaDao());
     }
 
     @Override

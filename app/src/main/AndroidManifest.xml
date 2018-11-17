@@ -18,9 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".tarefas.cadastro.CadastrarTarefaActivity"
-            />
+        <activity android:name=".tarefas.cadastro.CadastrarTarefaActivity" />
+        <activity android:name=".pomodoro.PomodoroActivity"></activity>
     </application>
 
 </manifest>

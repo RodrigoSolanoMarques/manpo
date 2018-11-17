@@ -28,8 +28,6 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
         BottomNavigationView navigationView = findViewById(R.id.bottomNavigationView);
         navigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener());
 
-//        new PrincipalPresenter();
-
         InicioFragment inicioFragment = new InicioFragment();
         new InicioPresenter(inicioFragment);
         carregarFragment(inicioFragment);
