@@ -49,9 +49,11 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiedtDescricao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/descricao"
+                    android:inputType="textCapSentences"
                     android:maxLength="128"
                     android:maxLines="3"
                     android:singleLine="false" />
@@ -76,6 +78,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilDescricao">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiedtTempoPrevisto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/previsao_tempo"
@@ -94,6 +97,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:entries="@array/prioridades"
+                android:spinnerMode="dialog"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ivPrioridade"
                 app:layout_constraintTop_toBottomOf="@+id/tilTempoPrevisto" />
@@ -103,10 +107,10 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="16dp"
+                android:background="@color/baixa"
                 app:layout_constraintBottom_toBottomOf="@+id/spPrioridade"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/spPrioridade"
-                app:srcCompat="@color/alta" />
+                app:layout_constraintTop_toTopOf="@+id/spPrioridade" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/tilDataCriacao"
@@ -124,6 +128,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/spPrioridade">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiedtDataCriacao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/data_de_criacao"
@@ -146,15 +151,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/spPrioridade">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/tiedtDataFinalizacao"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:hint="@string/data_da_finalizacao"
                     android:inputType="date"
                     android:maxLength="10" />
             </android.support.design.widget.TextInputLayout>
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/chkFinalizar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -166,7 +173,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tilDataFinalizacao" />
 
             <Button
-                android:id="@+id/tbnSalvar"
+                android:id="@+id/btnSalvar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -178,7 +185,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/chkFinalizar" />
 
             <Button
                 android:id="@+id/btnExcluir"
@@ -186,15 +193,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginBottom="16dp"
                 android:backgroundTint="@color/colorAccent"
                 android:text="@string/excluir"
                 android:textColor="@color/white"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tbnSalvar" />
+                app:layout_constraintTop_toBottomOf="@+id/btnSalvar" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

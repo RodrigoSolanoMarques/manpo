@@ -2,7 +2,6 @@ package br.com.rodrigosolanomarques.manpo.data.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.Nullable;
 
@@ -43,6 +42,8 @@ public class Tarefa implements Serializable {
     private boolean isFinalizada = false;
 
     public Tarefa() {
+        dataCriacao = new Date();
+        prioridade = Prioridade.BAIXA;
     }
 
     public long getId() {

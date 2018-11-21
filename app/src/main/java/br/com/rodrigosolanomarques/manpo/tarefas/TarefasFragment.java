@@ -1,10 +1,13 @@
 package br.com.rodrigosolanomarques.manpo.tarefas;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,19 +16,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toolbar;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.util.List;
 
 import br.com.rodrigosolanomarques.manpo.R;
+import br.com.rodrigosolanomarques.manpo.config.AppDatabase;
 import br.com.rodrigosolanomarques.manpo.data.model.Tarefa;
-import br.com.rodrigosolanomarques.manpo.enumeration.Prioridade;
+import br.com.rodrigosolanomarques.manpo.pomodoro.PomodoroActivity;
 import br.com.rodrigosolanomarques.manpo.tarefas.cadastro.CadastrarTarefaActivity;
+import br.com.rodrigosolanomarques.manpo.util.AlertDialogUtil;
 
 public class TarefasFragment
         extends Fragment
         implements TarefasContract.View, TarefasAdapter.OnItemClickListener, View.OnClickListener {
 
+    private RecyclerView recyclerView;
+    private FloatingActionButton fabAdicionarTarefa;
+
+
     private TarefasContract.Presenter presenter;
+    private AlertDialog alertDialog;
 
     public TarefasFragment() {
         // Required empty public constructor
@@ -45,62 +54,38 @@ public class TarefasFragment
                              Bundle savedInstanceState) {
 
         configurarToolbar();
-
         View layout = inflater.inflate(R.layout.fragment_tarefas, container, false);
 
-        RecyclerView recyclerView = layout.findViewById(R.id.rvListaTarefas);
-        FloatingActionButton fabAdicionarTarefa = layout.findViewById(R.id.fabAdicionarTarefa);
+        recuperarViews(layout);
+        configurarRecyclerView(recyclerView);
 
-        Tarefa tarefa1 = new Tarefa();
-        tarefa1.setDescricao("Fazer o artigo da Pós");
-        tarefa1.setPrioridade(Prioridade.BAIXA);
-        tarefa1.setDataCriacao(new Date());
-        tarefa1.setTempoPrevisto(20);
-        tarefa1.setFinalizada(true);
-
-
-        Tarefa tarefa4 = new Tarefa();
-        tarefa4.setDescricao("Fazer a PS que vai alterar o metodo de venda embarcada");
-        tarefa4.setPrioridade(Prioridade.ALTA);
-        tarefa4.setDataCriacao(new Date());
-        tarefa4.setTempoPrevisto(100);
-        tarefa4.setFinalizada(false);
-
-
-        Tarefa tarefa2 = new Tarefa();
-        tarefa2.setDescricao("Criar CRUD para o projeto da Pós");
-        tarefa2.setPrioridade(Prioridade.MEDIA);
-        tarefa2.setDataCriacao(new Date());
-        tarefa2.setTempoPrevisto(10);
-        tarefa2.setFinalizada(true);
-
-
-        Tarefa tarefa3 = new Tarefa();
-        tarefa3.setDescricao("Fazer o artigo da Pós");
-        tarefa3.setPrioridade(Prioridade.ALTA);
-        tarefa3.setDataCriacao(new Date());
-        tarefa3.setTempoPrevisto(50);
-        tarefa3.setFinalizada(true);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        TarefasAdapter adapter = new TarefasAdapter(getContext(), Arrays.asList(
-                tarefa1, tarefa2, tarefa3, tarefa4,
-                tarefa1, tarefa2, tarefa3, tarefa4,
-                tarefa1, tarefa2, tarefa3, tarefa4
-        ), this);
-        recyclerView.setAdapter(adapter);
-
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
-
+        alertDialog = AlertDialogUtil.criarAlertDialog(getActivity());
         fabAdicionarTarefa.setOnClickListener(this);
+
+        new TarefasPresenter(this, AppDatabase.getInstance(getContext()).tarefaDao());
         return layout;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.start();
     }
 
     private void configurarToolbar() {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.tarefas);
+    }
+
+    private void recuperarViews(View layout) {
+        recyclerView = layout.findViewById(R.id.rvListaTarefas);
+        fabAdicionarTarefa = layout.findViewById(R.id.fabAdicionarTarefa);
+    }
+
+    private void configurarRecyclerView(RecyclerView recyclerView) {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
     }
 
     @Override
@@ -110,10 +95,46 @@ public class TarefasFragment
 
     @Override
     public void onItemClick(Tarefa tarefa) {
+        Intent intent = new Intent(getActivity(), CadastrarTarefaActivity.class);
+        intent.putExtra(CadastrarTarefaActivity.TAREFA, tarefa.getId());
+        startActivity(intent);
+    }
+
+    @Override
+    public void executarTarefa(Tarefa tarefa) {
+        Intent intent = new Intent(getActivity(), PomodoroActivity.class);
+        intent.putExtra(PomodoroActivity.TAREFA, tarefa);
+        startActivity(intent);
     }
 
     @Override
     public void onClick(View v) {
         startActivity(new Intent(getContext(), CadastrarTarefaActivity.class));
     }
+
+
+    @SuppressLint("StaticFieldLeak")
+    public void carregarTarefas() {
+
+        new AsyncTask<Void, Void, List<Tarefa>>() {
+
+            @Override
+            protected void onPreExecute() {
+                alertDialog.show();
+            }
+
+            @Override
+            protected List<Tarefa> doInBackground(Void... voids) {
+                return presenter.carregarTarefas();
+            }
+
+            @Override
+            protected void onPostExecute(List<Tarefa> tarefas) {
+                alertDialog.dismiss();
+                TarefasAdapter adapter = new TarefasAdapter(getContext(), tarefas, TarefasFragment.this);
+                recyclerView.setAdapter(adapter);
+            }
+        }.execute();
+    }
+
 }

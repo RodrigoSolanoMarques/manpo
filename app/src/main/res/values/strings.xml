@@ -7,6 +7,7 @@
     <!-- A -->
     <string name="atividades">Atividades</string>
     <string name="atividade">Atividade</string>
+    <string name="aguarde">Aguarde</string>
     <!-- B -->
     <!-- C -->
     <string name="concentracao">Concentração</string>
@@ -35,6 +36,8 @@
     <string name="inicio">Início</string>
     <string name="info_ajuda_descricao_tarefa">Escreva algo simples e fácil de lembrar</string>
     <string name="info_ajuda_tempo_tarefa">Esse é a previsão de tempo em pomodoros que a tarefa vai durar.</string>
+    <string name="info_campo_obigatorio">Este campo é obrigatório</string>
+    <string name="info_data_invalida">Informe uma data válida</string>
     <string name="info_define_tempo_intervalo_curto">Define o tempo do intervalo curto</string>
     <string name="info_define_tempo_intervalo_longo">Define o tempo do intervalo longo</string>
     <string name="info_nao_notificar_concentracao">Não notificar concentração</string>
@@ -43,6 +46,8 @@
     <string name="info_notificar_concentracao">Notificar concentração</string>
     <string name="info_notificar_intervalo_curto">Notificar intervalo curto</string>
     <string name="info_notificar_intervalo_longo">Notificar intervalo longo</string>
+    <string name="info_tarefa_excluida">A tarefa foi excluída com sucesso.</string>
+    <string name="info_tarefa_salva">A tarefa foi salvada com sucesso.</string>
     <string name="info_tempo_concentracao_25_minutos">O tempo de concentração é de 25 minutos</string>
     <string name="intervalo">Intervalo</string>
     <string name="intervalo_curto">Intervalo curto</string>
@@ -55,6 +60,7 @@
     <!-- M -->
     <string name="mes">Mês</string>
     <!-- N -->
+    <string name="nao">Não</string>
     <string name="notificacao">Notificação</string>
     <string name="notificacoes">Notificações</string>
     <string name="novo">Novo</string>
@@ -63,6 +69,7 @@
     <string name="ordenar">Ordenar</string>
     <string name="ordenação">Ordenação</string>
     <!-- P -->
+    <string name="pergunta_deseja_cadastrar_atividades_para_tarefa">Deseja cadastrar atividades para esta tarefa?</string>
     <string name="pomodoro">Pomodoro</string>
     <string name="pomodoros">Pomodoros</string>
     <string name="pomodoro_s">Pomodoro(s)</string>
@@ -73,6 +80,8 @@
     <!-- S -->
     <string name="salvar">Salvar</string>
     <string name="semana">Semana</string>
+    <string name="sim">Sim</string>
+
     <!-- T -->
     <string name="tarefas">Tarefas</string>
     <string name="tarefa">Tarefa</string>

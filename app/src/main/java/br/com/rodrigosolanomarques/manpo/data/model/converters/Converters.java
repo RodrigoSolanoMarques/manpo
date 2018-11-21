@@ -25,6 +25,6 @@ public class Converters {
 
     @TypeConverter
     public static Prioridade stringParaPrioridade(String prioridade) {
-        return prioridade == null || prioridade.isEmpty() ? null : Prioridade.valueOf(prioridade);
+        return prioridade == null || prioridade.isEmpty() ? null : Prioridade.valueOf(prioridade.toUpperCase());
     }
 }

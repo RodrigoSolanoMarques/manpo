@@ -55,7 +55,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView5"
-                app:layout_constraintEnd_toStartOf="@+id/ivFinalizado"
+                app:layout_constraintEnd_toStartOf="@+id/ivConcluido"
                 app:layout_constraintStart_toEndOf="@+id/ivPrioridade"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="spread"
@@ -83,20 +83,34 @@
                 app:layout_constraintBottom_toBottomOf="@+id/tvDataCriacao"
                 app:layout_constraintStart_toEndOf="@+id/tvDataCriacao"
                 app:layout_constraintTop_toTopOf="@+id/tvDataCriacao"
-                app:srcCompat="@drawable/ic_timer_black" />
+                app:srcCompat="@drawable/ic_apple" />
 
             <ImageView
-                android:id="@+id/ivFinalizado"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/ivConcluido"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginBottom="8dp"
-                android:visibility="gone"
+                android:tint="@android:color/darker_gray"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_check_black" />
+
+            <ImageView
+                android:id="@+id/ivExecutar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                android:tint="@color/green_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_play_arrow_black" />
 
             <ImageView
                 android:id="@+id/imageView5"

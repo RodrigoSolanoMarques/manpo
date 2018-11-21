@@ -26,14 +26,14 @@
 
     <string-array name="prioridades">
         <item>Alta</item>
-        <item>Baixa</item>
         <item>Média</item>
+        <item>Baixa</item>
     </string-array>
 
     <string-array name="prioridades_valor">
         <item>Alta</item>
-        <item>Baixa</item>
         <item>Media</item>
+        <item>Baixa</item>
     </string-array>
 
 </resources>

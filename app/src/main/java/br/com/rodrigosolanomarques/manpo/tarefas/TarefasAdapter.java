@@ -24,6 +24,8 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
 
     public interface OnItemClickListener {
         void onItemClick(Tarefa tarefa);
+
+        void executarTarefa(Tarefa tarefa);
     }
 
     public TarefasAdapter(Context context, List tarefas, OnItemClickListener listener) {
@@ -68,9 +70,11 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         }
 
         if (tarefa.isFinalizada()) {
-            tarefaHolder.ivFinalizado.setVisibility(View.VISIBLE);
+            tarefaHolder.ivConcluido.setVisibility(View.VISIBLE);
+            tarefaHolder.ivExecutar.setVisibility(View.GONE);
         } else {
-            tarefaHolder.ivFinalizado.setVisibility(View.GONE);
+            tarefaHolder.ivConcluido.setVisibility(View.GONE);
+            tarefaHolder.ivExecutar.setVisibility(View.VISIBLE);
         }
 
     }
@@ -82,7 +86,8 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
 
     class TarefaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView ivPrioridade;
-        private ImageView ivFinalizado;
+        private ImageView ivConcluido;
+        private ImageView ivExecutar;
         private TextView tvTitulo;
         private TextView tvTempo;
         private TextView tvDataCriacao;
@@ -92,12 +97,20 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         public TarefaHolder(@NonNull View itemView) {
             super(itemView);
             ivPrioridade = itemView.findViewById(R.id.ivPrioridade);
-            ivFinalizado = itemView.findViewById(R.id.ivFinalizado);
+            ivConcluido = itemView.findViewById(R.id.ivConcluido);
+            ivExecutar = itemView.findViewById(R.id.ivExecutar);
             tvTitulo = itemView.findViewById(R.id.tvTitulo);
             tvTempo = itemView.findViewById(R.id.tvTempo);
             tvDataCriacao = itemView.findViewById(R.id.tvDataCriacao);
             cardView = itemView.findViewById(R.id.cardView);
             cardView.setOnClickListener(this);
+
+            ivExecutar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.executarTarefa(tarefas.get(getAdapterPosition()));
+                }
+            });
         }
 
         @Override
