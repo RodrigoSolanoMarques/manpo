@@ -7,7 +7,7 @@
     </string-array>
 
     <string-array name="intervalo_curto_valor">
-        <item>1</item>
+        <item>3</item>
         <item>5</item>
         <item>8</item>
     </string-array>
@@ -19,7 +19,7 @@
     </string-array>
 
     <string-array name="intervalo_longo_valor">
-        <item>2</item>
+        <item>20</item>
         <item>25</item>
         <item>30</item>
     </string-array>

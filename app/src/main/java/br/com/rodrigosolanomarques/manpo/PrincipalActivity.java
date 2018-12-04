@@ -11,8 +11,8 @@ import android.view.MenuItem;
 import android.widget.Toolbar;
 
 import br.com.rodrigosolanomarques.manpo.configuracao.ConfiguracaoFragment;
-import br.com.rodrigosolanomarques.manpo.inicio.InicioFragment;
-import br.com.rodrigosolanomarques.manpo.inicio.InicioPresenter;
+import br.com.rodrigosolanomarques.manpo.sobre.SobreFragment;
+import br.com.rodrigosolanomarques.manpo.sobre.SobrePresenter;
 import br.com.rodrigosolanomarques.manpo.tarefas.TarefasFragment;
 
 public class PrincipalActivity extends AppCompatActivity implements PrincipalContract.View {
@@ -50,9 +50,9 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
                         return true;
 
                     case R.id.sobre:
-                        InicioFragment inicioFragment = InicioFragment.newInstance();
-                        new InicioPresenter(inicioFragment);
-                        carregarFragment(inicioFragment);
+                        SobreFragment sobreFragment = SobreFragment.newInstance();
+                        new SobrePresenter(sobreFragment);
+                        carregarFragment(sobreFragment);
                         return true;
                 }
                 return false;

@@ -1,4 +1,4 @@
-package br.com.rodrigosolanomarques.manpo.inicio;
+package br.com.rodrigosolanomarques.manpo.sobre;
 
 
 import android.os.Bundle;
@@ -10,15 +10,15 @@ import android.widget.Toolbar;
 
 import br.com.rodrigosolanomarques.manpo.R;
 
-public class InicioFragment extends Fragment implements InicioContract.View {
+public class SobreFragment extends Fragment implements SobreContract.View {
 
-    private InicioContract.Presenter presenter;
+    private SobreContract.Presenter presenter;
 
-    public InicioFragment() {
+    public SobreFragment() {
     }
 
-    public static InicioFragment newInstance() {
-        return new InicioFragment();
+    public static SobreFragment newInstance() {
+        return new SobreFragment();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class InicioFragment extends Fragment implements InicioContract.View {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         configurarToolbar();
-        View layout = inflater.inflate(R.layout.fragment_inicio, container, false);
+        View layout = inflater.inflate(R.layout.fragment_sobre, container, false);
         return layout;
     }
 
@@ -46,7 +46,7 @@ public class InicioFragment extends Fragment implements InicioContract.View {
     }
 
     @Override
-    public void setPresenter(InicioContract.Presenter presenter) {
+    public void setPresenter(SobreContract.Presenter presenter) {
         this.presenter = presenter;
     }
 }
