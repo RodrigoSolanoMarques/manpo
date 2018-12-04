@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">MANPO</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="v1_0_0">1.0.0</string>
 
     <!-- A -->
     <string name="atividades">Atividades</string>
@@ -17,6 +15,7 @@
     <!-- D -->
     <string name="data_de_criacao">Data de criação</string>
     <string name="data_da_finalizacao">Data da finalização</string>
+    <string name="desenvolvedor">Desenvolvedor</string>
     <string name="descricao">Descrição</string>
 
     <!-- E -->
@@ -37,9 +36,13 @@
     <string name="info_ajuda_descricao_tarefa">Escreva algo simples e fácil de lembrar</string>
     <string name="info_ajuda_tempo_tarefa">Esse é a previsão de tempo em pomodoros que a tarefa vai durar.</string>
     <string name="info_campo_obigatorio">Este campo é obrigatório</string>
+    <string name="info_concentracao">É hora de voltar. Não acumule tarefas.</string>
     <string name="info_data_invalida">Informe uma data válida</string>
     <string name="info_define_tempo_intervalo_curto">Define o tempo do intervalo curto</string>
     <string name="info_define_tempo_intervalo_longo">Define o tempo do intervalo longo</string>
+    <string name="info_etapa_concluida">Etapa concluída</string>
+    <string name="info_descanso_intervalo_curto">Hora do intervalo, mas um intervalo curto.</string>
+    <string name="info_descanso_intervalo_longo">Agora você pode descansar um pouco mais.</string>
     <string name="info_nao_notificar_concentracao">Não notificar concentração</string>
     <string name="info_nao_notificar_intervalo_curto">Não notificar intervalo curto</string>
     <string name="info_nao_notificar_intervalo_longo">Não notificar intervalo longo</string>
@@ -70,17 +73,22 @@
     <string name="ordenação">Ordenação</string>
     <!-- P -->
     <string name="pergunta_deseja_cadastrar_atividades_para_tarefa">Deseja cadastrar atividades para esta tarefa?</string>
+    <string name="pergunta_deseja_excluir_tarefa">Deseja excluir esta tarefa?</string>
+    <string name="pergunta_deseja_finalizar_tarefa">Deseja finalizar esta tarefa?</string>
     <string name="pomodoro">Pomodoro</string>
-    <string name="pomodoros">Pomodoros</string>
     <string name="pomodoro_s">Pomodoro(s)</string>
+    <string name="pomodoros">Pomodoros</string>
+    <string name="pomodoros_executados">Pomodoros executados</string>
     <string name="previsao_tempo">Previsão de Tempo</string>
 
     <!-- Q -->
     <!-- R -->
+    <string name="rodrigo_solano_marques">Rodrigo Solano Marques</string>
     <!-- S -->
     <string name="salvar">Salvar</string>
     <string name="semana">Semana</string>
     <string name="sim">Sim</string>
+    <string name="sobre">Sobre</string>
 
     <!-- T -->
     <string name="tarefas">Tarefas</string>
@@ -90,6 +98,8 @@
 
     <!-- U -->
     <!-- V -->
+    <string name="versao">Versão</string>
+
     <!-- X -->
     <!-- Z -->
 

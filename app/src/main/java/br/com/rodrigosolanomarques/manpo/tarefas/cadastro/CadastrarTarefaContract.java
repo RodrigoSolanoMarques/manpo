@@ -24,6 +24,8 @@ public interface CadastrarTarefaContract {
         void mostrarToast(@StringRes int msg);
 
         void finalizarTela();
+
+        void bloquearCampos();
     }
 
     interface Presenter extends BasePresenter {

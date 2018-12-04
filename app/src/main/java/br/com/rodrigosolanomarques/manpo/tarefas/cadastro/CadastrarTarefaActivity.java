@@ -42,6 +42,7 @@ public class CadastrarTarefaActivity
 
     private TextInputEditText tiedtDescricao;
     private TextInputEditText tiedtTempoPrevisto;
+    private TextInputEditText tiedtTempoExecutado;
     private TextInputEditText tiedtDataCriacao;
     private TextInputEditText tiedtDataFinalizacao;
     private ImageView ivPrioridade;
@@ -77,7 +78,7 @@ public class CadastrarTarefaActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_activity_cadastrar_tarefa, menu);
+//        getMenuInflater().inflate(R.menu.menu_activity_cadastrar_tarefa, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -88,8 +89,8 @@ public class CadastrarTarefaActivity
             case android.R.id.home:
                 finish();
                 return true;
-            case R.id.menu_atividade:
-                return true;
+//            case R.id.menu_atividade:
+//                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -108,10 +109,10 @@ public class CadastrarTarefaActivity
             public void run() {
                 tiedtDescricao.setText(tarefa.getDescricao());
 
-                Integer tempoPrevisto = tarefa.getTempoPrevisto();
-                if (tempoPrevisto != null && tempoPrevisto > 0) {
-                    tiedtTempoPrevisto.setText(String.valueOf(tempoPrevisto));
-                }
+                Integer tempoPrevisto = tarefa.getTempoPrevisto() != null ? tarefa.getTempoPrevisto() : 0;
+                Integer tempoExecutado = tarefa.getTempoExcutado() != null ? tarefa.getTempoExcutado() : 0;
+                tiedtTempoPrevisto.setText(String.valueOf(tempoPrevisto));
+                tiedtTempoExecutado.setText(String.valueOf(tempoExecutado));
 
                 spPrioridade.setSelection(tarefa.getPrioridade().ordinal(), true);
 
@@ -203,7 +204,13 @@ public class CadastrarTarefaActivity
 
     @Override
     public void mostrarBotaoExcluir() {
-        btnExcluir.setVisibility(View.VISIBLE);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                btnExcluir.setVisibility(View.VISIBLE);
+            }
+        });
+
     }
 
     @Override
@@ -257,6 +264,25 @@ public class CadastrarTarefaActivity
         finish();
     }
 
+    @Override
+    public void bloquearCampos() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tiedtDescricao.setEnabled(false);
+                tiedtTempoPrevisto.setEnabled(false);
+                tiedtDataCriacao.setEnabled(false);
+                tiedtDataFinalizacao.setEnabled(false);
+                ivPrioridade.setEnabled(false);
+                chkFinalizar.setEnabled(false);
+                spPrioridade.setEnabled(false);
+                btnSalvar.setEnabled(false);
+                btnSalvar.setVisibility(View.GONE);
+            }
+        });
+
+    }
+
     // ===============================================================
     // ========================== LifeCycle ==========================
     // ===============================================================
@@ -295,6 +321,7 @@ public class CadastrarTarefaActivity
 
         tiedtDescricao = findViewById(R.id.tiedtDescricao);
         tiedtTempoPrevisto = findViewById(R.id.tiedtTempoPrevisto);
+        tiedtTempoExecutado = findViewById(R.id.tiedtTempoExecutado);
         tiedtDataCriacao = findViewById(R.id.tiedtDataCriacao);
         tiedtDataFinalizacao = findViewById(R.id.tiedtDataFinalizacao);
         ivPrioridade = findViewById(R.id.ivPrioridade);
@@ -315,7 +342,19 @@ public class CadastrarTarefaActivity
         btnExcluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                excluirTarefa();
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(CadastrarTarefaActivity.this);
+                builder.setTitle(R.string.app_name);
+                builder.setMessage(R.string.pergunta_deseja_excluir_tarefa);
+                builder.setPositiveButton(R.string.sim, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        excluirTarefa();
+                    }
+                });
+                builder.setNegativeButton(R.string.nao, null);
+                builder.create().show();
             }
         });
     }

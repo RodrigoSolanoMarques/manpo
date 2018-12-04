@@ -2,12 +2,23 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="@string/intervalos">
+
+        <EditTextPreference
+            android:defaultValue="25"
+            android:dialogIcon="@drawable/ic_access_time_black"
+            android:enabled="false"
+            android:icon="@drawable/ic_access_time_black"
+            android:inputType="number"
+            android:key="p_concentracao"
+            android:summary="@string/info_tempo_concentracao_25_minutos"
+            android:title="@string/concentracao" />
+
         <ListPreference
             android:defaultValue="5"
             android:entries="@array/intervalo_curto_minutos"
             android:entryValues="@array/intervalo_curto_valor"
             android:icon="@drawable/ic_access_time_black"
-            android:key="intervalo_curto"
+            android:key="p_intervalo_curto"
             android:summary="@string/info_define_tempo_intervalo_curto"
             android:title="@string/intervalo_curto" />
 
@@ -16,22 +27,23 @@
             android:entries="@array/intervalo_longo_minutos"
             android:entryValues="@array/intervalo_longo_valor"
             android:icon="@drawable/ic_access_time_black"
-            android:key="intervalo_longo"
+            android:key="p_intervalo_longo"
             android:summary="@string/info_define_tempo_intervalo_longo"
             android:title="@string/intervalo_longo" />
 
-        <EditTextPreference
-            android:defaultValue="25"
-            android:dialogIcon="@drawable/ic_access_time_black"
-            android:icon="@drawable/ic_access_time_black"
-            android:inputType="number"
-            android:enabled="false"
-            android:key="intervalo_longo"
-            android:summary="@string/info_tempo_concentracao_25_minutos"
-            android:title="@string/concentracao" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/notificacoes">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_notifications_black"
+            android:key="notificacao_concentracao"
+            android:summaryOff="@string/info_nao_notificar_concentracao"
+            android:summaryOn="@string/info_notificar_concentracao"
+            android:title="@string/concentracao" />
+
         <SwitchPreference
             android:defaultValue="true"
             android:icon="@drawable/ic_notifications_black"
@@ -48,13 +60,6 @@
             android:summaryOn="@string/info_notificar_intervalo_longo"
             android:title="@string/intervalo_longo" />
 
-        <SwitchPreference
-            android:defaultValue="true"
-            android:icon="@drawable/ic_notifications_black"
-            android:key="notificacao_concentração"
-            android:summaryOff="@string/info_nao_notificar_concentracao"
-            android:summaryOn="@string/info_notificar_concentracao"
-            android:title="@string/concentracao" />
     </PreferenceCategory>
 
 </PreferenceScreen>

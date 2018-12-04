@@ -16,25 +16,23 @@ public class Tarefa implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    @Nullable
     @ColumnInfo
     private String descricao;
 
-    @Nullable
     @ColumnInfo
-    private Integer tempoPrevisto;
-
-    @ColumnInfo
-    private Integer tempoExcutado;
+    private Integer tempoPrevisto = 0;
 
     @Nullable
+    @ColumnInfo
+    private Integer tempoExcutado = 0;
+
     @ColumnInfo(name = "data_criacao")
     private Date dataCriacao;
 
+    @Nullable
     @ColumnInfo(name = "data_finalizacao")
     private Date dataFinalizacao;
 
-    @Nullable
     @ColumnInfo
     private Prioridade prioridade;
 
@@ -54,21 +52,19 @@ public class Tarefa implements Serializable {
         this.id = id;
     }
 
-    @Nullable
     public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(@Nullable String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
-    @Nullable
     public Integer getTempoPrevisto() {
         return tempoPrevisto;
     }
 
-    public void setTempoPrevisto(@Nullable Integer tempoPrevisto) {
+    public void setTempoPrevisto(Integer tempoPrevisto) {
         this.tempoPrevisto = tempoPrevisto;
     }
 
@@ -80,12 +76,11 @@ public class Tarefa implements Serializable {
         this.tempoExcutado = tempoExcutado;
     }
 
-    @Nullable
     public Date getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(@Nullable Date dataCriacao) {
+    public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
@@ -97,12 +92,11 @@ public class Tarefa implements Serializable {
         this.dataFinalizacao = dataFinalizacao;
     }
 
-    @Nullable
     public Prioridade getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(@Nullable Prioridade prioridade) {
+    public void setPrioridade(Prioridade prioridade) {
         this.prioridade = prioridade;
     }
 

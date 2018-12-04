@@ -7,12 +7,6 @@ public interface InicioContract {
 
     interface View extends BaseView<Presenter> {
 
-        void atualiarPomodoHoje(int valor);
-
-        void atualiarPomodoSemana(int valor);
-
-        void atualiarPomodoMes(int valor);
-
     }
 
     interface Presenter extends BasePresenter {

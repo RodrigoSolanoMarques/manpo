@@ -30,6 +30,9 @@ public class CadastrarTarefaPresenter implements CadastrarTarefaContract.Present
             tarefa = new Tarefa();
         }
         view.preencherTarefa(tarefa);
+        if (tarefa.isFinalizada()) {
+            view.bloquearCampos();
+        }
     }
 
     @Override
@@ -53,8 +56,9 @@ public class CadastrarTarefaPresenter implements CadastrarTarefaContract.Present
         if (tarefa.getId() == 0) {
             Long idTarefa = tarefaDao.insert(tarefa);
             tarefa.setId(idTarefa);
-            view.mostrarAlertDialogInfoCadastrarAtividade();
+//            view.mostrarAlertDialogInfoCadastrarAtividade();
             view.mostrarToast(R.string.info_tarefa_salva);
+            view.finalizarTela();
             return;
         }
         tarefaDao.update(tarefa);

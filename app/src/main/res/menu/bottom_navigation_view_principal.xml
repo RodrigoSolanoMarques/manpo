@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item
-        android:id="@+id/inicio"
-        android:icon="@drawable/ic_inicio_black_24dp"
-        android:title="Inicio"
-        android:visible="true"
-        app:showAsAction="ifRoom" />
+    <!--<item-->
+        <!--android:id="@+id/inicio"-->
+        <!--android:icon="@drawable/ic_inicio_black_24dp"-->
+        <!--android:title="Inicio"-->
+        <!--android:visible="true"-->
+        <!--app:showAsAction="ifRoom" />-->
 
     <item
         android:id="@+id/tarefas"
@@ -21,6 +21,13 @@
         android:id="@+id/configuracao"
         android:icon="@drawable/ic_settings_black_24dp"
         android:title="Configuração"
+        android:visible="true"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/sobre"
+        android:icon="@drawable/ic_info"
+        android:title="Sobre"
         android:visible="true"
         app:showAsAction="ifRoom" />
 </menu>

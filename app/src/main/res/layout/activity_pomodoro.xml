@@ -6,4 +6,235 @@
     android:layout_height="match_parent"
     tools:context=".pomodoro.PomodoroActivity">
 
+    <include
+        android:id="@+id/include2"
+        layout="@layout/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <ImageView
+        android:id="@+id/ivExecutar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:tint="@color/green_light"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPausar"
+        app:layout_constraintEnd_toStartOf="@+id/ivPausar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivPausar"
+        app:srcCompat="@drawable/ic_play_arrow_black" />
+
+    <ImageView
+        android:id="@+id/ivParar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPausar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivPausar"
+        app:layout_constraintTop_toTopOf="@+id/ivPausar"
+        app:srcCompat="@drawable/ic_stop_black" />
+
+    <ImageView
+        android:id="@+id/ivPausar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@+id/ivParar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivExecutar"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer"
+        app:srcCompat="@drawable/ic_pause_black" />
+
+    <TextView
+        android:id="@+id/tvTarefaDescricao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="fill_vertical"
+        android:lines="3"
+        android:maxLines="3"
+        android:text="Tarefa 01"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPausar" />
+
+    <ImageView
+        android:id="@+id/ivConcentracao"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/tvConcentracao"
+        app:layout_constraintStart_toStartOf="@+id/tvConcentracao"
+        app:layout_constraintTop_toBottomOf="@+id/tvConcentracao"
+        app:srcCompat="@drawable/ic_my_location_black" />
+
+    <ImageView
+        android:id="@+id/ivIntervaloLongo"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntervaloLongo"
+        app:layout_constraintStart_toStartOf="@+id/tvIntervaloLongo"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntervaloLongo"
+        app:srcCompat="@drawable/ic_hotel_black" />
+
+    <ImageView
+        android:id="@+id/ivIntervaloCurto"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="@+id/tvIntervaloCurto"
+        app:layout_constraintStart_toStartOf="@+id/tvIntervaloCurto"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntervaloCurto"
+        app:srcCompat="@drawable/ic_local_cafe_black" />
+
+    <TextView
+        android:id="@+id/tvConcentracao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Concentração"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarTarefa"
+        app:layout_constraintEnd_toStartOf="@+id/tvIntervaloCurto"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPomodorosPrevistos" />
+
+    <TextView
+        android:id="@+id/tvIntervaloCurto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Intervalo Curto"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarTarefa"
+        app:layout_constraintEnd_toStartOf="@+id/tvIntervaloLongo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvConcentracao"
+        app:layout_constraintTop_toBottomOf="@+id/tvPomodorosPrevistos" />
+
+    <TextView
+        android:id="@+id/tvIntervaloLongo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Intervalo Longo"
+        app:layout_constraintBottom_toTopOf="@+id/btnFinalizarTarefa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvIntervaloCurto"
+        app:layout_constraintTop_toBottomOf="@+id/tvPomodorosPrevistos" />
+
+    <Button
+        android:id="@+id/btnFinalizarTarefa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="@string/finalizar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/labelPrevisaoPomodoros"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="6dp"
+        android:text="POMODOROS\nPREVISTOS"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/labelPomodorosExecutados"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTarefaDescricao" />
+
+    <TextView
+        android:id="@+id/labelPomodorosExecutados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="POMODOROS\nEXECUTADOS"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/labelPrevisaoPomodoros"
+        app:layout_constraintTop_toBottomOf="@+id/tvTarefaDescricao" />
+
+    <TextView
+        android:id="@+id/tvPomodorosPrevistos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/labelPrevisaoPomodoros"
+        app:layout_constraintStart_toStartOf="@+id/labelPrevisaoPomodoros"
+        app:layout_constraintTop_toBottomOf="@+id/labelPrevisaoPomodoros"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/tvPomodorosExecutados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="0"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/labelPomodorosExecutados"
+        app:layout_constraintStart_toStartOf="@+id/labelPomodorosExecutados"
+        app:layout_constraintTop_toBottomOf="@+id/labelPomodorosExecutados"
+        tools:text="0" />
+
 </android.support.constraint.ConstraintLayout>

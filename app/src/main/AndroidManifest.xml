@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.rodrigosolanomarques.manpo">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_apple"
@@ -12,14 +14,25 @@
         <activity
             android:name=".PrincipalActivity"
             android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".tarefas.cadastro.CadastrarTarefaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".pomodoro.PomodoroActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".splash_screen.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".tarefas.cadastro.CadastrarTarefaActivity" />
-        <activity android:name=".pomodoro.PomodoroActivity"></activity>
     </application>
 
 </manifest>

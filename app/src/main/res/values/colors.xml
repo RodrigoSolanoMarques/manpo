@@ -2,14 +2,19 @@
 <resources>
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#D50000</color>
-    <color name="colorAccent">#E84C5A</color>
+    <color name="colorAccent">@color/red</color>
     <!--<color name="colorAccent">#ffffff</color>-->
 
 
-    <color name="alta">@color/colorAccent</color>
-    <color name="baixa">#4c5ee8</color>
-    <color name="media">#e8ce4c</color>
+    <color name="alta">@color/red</color>
+    <color name="baixa">@color/blue</color>
+    <color name="media">@color/yellow</color>
+    <color name="red">#E84C5A</color>
+    <color name="blue">#4c5ee8</color>
+    <color name="yellow">#e8ce4c</color>
+
     <color name="green_light">#ff99cc00</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="darker_gray">#aaa</color>
 </resources>

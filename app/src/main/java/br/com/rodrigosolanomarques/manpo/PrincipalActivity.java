@@ -28,9 +28,8 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
         BottomNavigationView navigationView = findViewById(R.id.bottomNavigationView);
         navigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener());
 
-        InicioFragment inicioFragment = new InicioFragment();
-        new InicioPresenter(inicioFragment);
-        carregarFragment(inicioFragment);
+        TarefasFragment tarefasFragment = TarefasFragment.newInstance();
+        carregarFragment(tarefasFragment);
     }
 
     @NonNull
@@ -40,13 +39,6 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch (menuItem.getItemId()) {
-                    case R.id.inicio:
-                        InicioFragment inicioFragment = InicioFragment.newInstance();
-                        // Fazer um singleton - fazer
-                        new InicioPresenter(inicioFragment);
-                        carregarFragment(inicioFragment);
-                        return true;
-
                     case R.id.tarefas:
                         TarefasFragment tarefasFragment = TarefasFragment.newInstance();
                         carregarFragment(tarefasFragment);
@@ -55,6 +47,12 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
                     case R.id.configuracao:
                         ConfiguracaoFragment configuracaoFragment = ConfiguracaoFragment.newInstance();
                         carregarFragment(configuracaoFragment);
+                        return true;
+
+                    case R.id.sobre:
+                        InicioFragment inicioFragment = InicioFragment.newInstance();
+                        new InicioPresenter(inicioFragment);
+                        carregarFragment(inicioFragment);
                         return true;
                 }
                 return false;
