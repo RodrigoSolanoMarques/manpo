@@ -50,12 +50,12 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
+                android:maxLines="2"
+                android:singleLine="false"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView5"
-                app:layout_constraintEnd_toStartOf="@+id/ivConcluido"
+                app:layout_constraintEnd_toStartOf="@+id/ivEditar"
                 app:layout_constraintStart_toEndOf="@+id/ivPrioridade"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="spread"
@@ -90,8 +90,9 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
+                android:padding="4dp"
                 android:tint="@android:color/darker_gray"
                 android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -101,11 +102,12 @@
 
             <ImageView
                 android:id="@+id/ivExecutar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:tint="@color/green_light"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,12 +119,25 @@
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:tint="@android:color/darker_gray"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ivPrioridade"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
                 app:srcCompat="@drawable/ic_event_black_24dp" />
+
+            <ImageView
+                android:id="@+id/ivEditar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="8dp"
+                android:tint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/ivExecutar"
+                app:layout_constraintEnd_toStartOf="@+id/ivExecutar"
+                app:layout_constraintTop_toTopOf="@+id/ivExecutar"
+                app:srcCompat="@drawable/ic_edit_black" />
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 

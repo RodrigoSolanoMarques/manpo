@@ -6,7 +6,10 @@
     <string name="atividades">Atividades</string>
     <string name="atividade">Atividade</string>
     <string name="aguarde">Aguarde</string>
+
     <!-- B -->
+    <string name="backlog">Backlog</string>
+
     <!-- C -->
     <string name="concentracao">Concentração</string>
     <string name="configuracao">Configuração</string>

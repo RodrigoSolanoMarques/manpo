@@ -70,6 +70,7 @@ public class PrincipalActivity extends AppCompatActivity implements PrincipalCon
     private void configurarToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setLogo(R.drawable.ic_apple);
+        toolbar.setTitle(R.string.backlog);
         setActionBar(toolbar);
     }
 

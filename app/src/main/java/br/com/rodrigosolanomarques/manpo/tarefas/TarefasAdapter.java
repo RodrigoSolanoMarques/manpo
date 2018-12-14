@@ -72,9 +72,11 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         if (tarefa.isFinalizada()) {
             tarefaHolder.ivConcluido.setVisibility(View.VISIBLE);
             tarefaHolder.ivExecutar.setVisibility(View.GONE);
+            tarefaHolder.ivEditar.setVisibility(View.GONE);
         } else {
             tarefaHolder.ivConcluido.setVisibility(View.GONE);
             tarefaHolder.ivExecutar.setVisibility(View.VISIBLE);
+            tarefaHolder.ivEditar.setVisibility(View.VISIBLE);
         }
 
     }
@@ -84,10 +86,11 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
         return tarefas.size();
     }
 
-    class TarefaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class TarefaHolder extends RecyclerView.ViewHolder {
         private ImageView ivPrioridade;
         private ImageView ivConcluido;
         private ImageView ivExecutar;
+        private ImageView ivEditar;
         private TextView tvTitulo;
         private TextView tvTempo;
         private TextView tvDataCriacao;
@@ -99,11 +102,11 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
             ivPrioridade = itemView.findViewById(R.id.ivPrioridade);
             ivConcluido = itemView.findViewById(R.id.ivConcluido);
             ivExecutar = itemView.findViewById(R.id.ivExecutar);
+            ivEditar = itemView.findViewById(R.id.ivEditar);
             tvTitulo = itemView.findViewById(R.id.tvTitulo);
             tvTempo = itemView.findViewById(R.id.tvTempo);
             tvDataCriacao = itemView.findViewById(R.id.tvDataCriacao);
             cardView = itemView.findViewById(R.id.cardView);
-            cardView.setOnClickListener(this);
 
             ivExecutar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,11 +114,13 @@ public class TarefasAdapter extends RecyclerView.Adapter<TarefasAdapter.TarefaHo
                     listener.executarTarefa(tarefas.get(getAdapterPosition()));
                 }
             });
-        }
 
-        @Override
-        public void onClick(View v) {
-            listener.onItemClick(tarefas.get(getAdapterPosition()));
+            ivEditar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(tarefas.get(getAdapterPosition()));
+                }
+            });
         }
     }
 }

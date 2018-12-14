@@ -74,7 +74,7 @@ public class TarefasFragment
 
     private void configurarToolbar() {
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.tarefas);
+        toolbar.setTitle(R.string.backlog);
     }
 
     private void recuperarViews(View layout) {
